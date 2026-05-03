@@ -680,7 +680,7 @@ export default function Admin() {
                 </div>
                 <button
                   onClick={handleSave}
-                  disabled={saveState === "saving" || saveState === "deploying" || saveState === "loading"}
+                  disabled={saveState === "saving" || saveState === "deploying"}
                   className="flex items-center gap-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold px-8 py-3 rounded-xl transition-colors shadow-md text-base"
                 >
                   {saveState === "saving" || saveState === "deploying"
