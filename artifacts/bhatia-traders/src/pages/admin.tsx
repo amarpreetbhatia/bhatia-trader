@@ -16,6 +16,37 @@ const GH_HEADERS = {
   "Content-Type": "application/json",
 };
 
+const THEME_KEYS = [
+  "default",
+  "diwali",
+  "holi",
+  "rakhi",
+  "ganesh",
+  "navratri",
+  "independence",
+  "republic",
+  "holidays",
+  "spring",
+  "monsoon",
+] as const;
+
+type ThemeKey = (typeof THEME_KEYS)[number];
+
+type ThemePreset = {
+  name: string;
+  primary: string;
+  secondary: string;
+  accent: string;
+  background: string;
+  foreground: string;
+  muted: string;
+  mutedForeground: string;
+  card: string;
+  cardForeground: string;
+  border: string;
+  destructive: string;
+};
+
 // ─────────────────────── GitHub helpers ───────────────────────
 async function ghFetchContent() {
   const r = await fetch(
@@ -184,8 +215,14 @@ function FieldRow({ label, hint, value, onChange, multiline, rows }: {
 
 // ─────────────────────── Page tab forms ───────────────────────
 type Content = ReturnType<typeof getDefaultContent>;
+type SiteContent = Content & {
+  theme: ThemeKey;
+  themePresets: Record<ThemeKey, ThemePreset>;
+};
+
 function getDefaultContent() {
   return {
+    theme: "default",
     home: {
       heroBadge: "", taglineHindi1: "", taglineHindi2: "", taglineEnglish: "",
       heroDescHindi: "", heroDescEnglish: "", heroImage: "hero.jpg", yearsExperience: "",
@@ -212,7 +249,55 @@ function getDefaultContent() {
       stat2Value: "", stat2LabelEnglish: "", stat2LabelHindi: "",
     },
     contact: { phone: "", email: "", address: "", hoursWeekday: "", hoursSunday: "", mapsEmbedUrl: "" },
+    themePresets: {
+      default: { name: "Classic Blue", primary: "222 69% 30%", secondary: "225 55% 32%", accent: "55 100% 50%", background: "0 0% 98%", foreground: "222 47% 11%", muted: "210 40% 96.1%", mutedForeground: "215.4 16.3% 46.9%", card: "0 0% 100%", cardForeground: "222 47% 11%", border: "214 32% 91%", destructive: "0 65% 51%" },
+      diwali: { name: "Diwali Gold", primary: "28 96% 42%", secondary: "18 88% 37%", accent: "45 100% 60%", background: "35 100% 97%", foreground: "23 47% 11%", muted: "35 100% 94%", mutedForeground: "25 18% 40%", card: "0 0% 100%", cardForeground: "23 47% 11%", border: "31 90% 86%", destructive: "0 72% 48%" },
+      holi: { name: "Holi Colors", primary: "275 78% 43%", secondary: "189 85% 42%", accent: "335 92% 58%", background: "300 100% 98%", foreground: "228 47% 12%", muted: "298 100% 95%", mutedForeground: "258 18% 40%", card: "0 0% 100%", cardForeground: "228 47% 12%", border: "289 90% 88%", destructive: "350 74% 50%" },
+      rakhi: { name: "Rakhi Pink", primary: "330 75% 45%", secondary: "220 60% 38%", accent: "43 100% 56%", background: "332 100% 98%", foreground: "222 47% 11%", muted: "330 100% 95%", mutedForeground: "330 20% 42%", card: "0 0% 100%", cardForeground: "222 47% 11%", border: "330 90% 88%", destructive: "0 65% 51%" },
+      ganesh: { name: "Ganesh Chaturthi", primary: "36 95% 44%", secondary: "157 56% 30%", accent: "48 100% 52%", background: "39 100% 97%", foreground: "24 47% 12%", muted: "40 100% 94%", mutedForeground: "28 18% 40%", card: "0 0% 100%", cardForeground: "24 47% 12%", border: "36 92% 87%", destructive: "0 65% 51%" },
+      navratri: { name: "Navratri Festive", primary: "355 79% 42%", secondary: "29 88% 44%", accent: "48 100% 58%", background: "12 100% 98%", foreground: "220 47% 11%", muted: "13 100% 95%", mutedForeground: "10 18% 40%", card: "0 0% 100%", cardForeground: "220 47% 11%", border: "16 90% 88%", destructive: "0 65% 51%" },
+      independence: { name: "Independence Day", primary: "16 90% 45%", secondary: "210 82% 28%", accent: "135 65% 45%", background: "38 100% 98%", foreground: "222 47% 11%", muted: "35 100% 95%", mutedForeground: "24 18% 40%", card: "0 0% 100%", cardForeground: "222 47% 11%", border: "31 90% 88%", destructive: "0 65% 51%" },
+      republic: { name: "Republic Day", primary: "210 80% 32%", secondary: "132 55% 34%", accent: "32 100% 50%", background: "40 100% 98%", foreground: "222 47% 11%", muted: "39 100% 95%", mutedForeground: "24 18% 40%", card: "0 0% 100%", cardForeground: "222 47% 11%", border: "35 88% 89%", destructive: "0 65% 51%" },
+      holidays: { name: "Winter Holidays", primary: "240 60% 35%", secondary: "170 45% 28%", accent: "35 100% 56%", background: "210 100% 98%", foreground: "222 47% 11%", muted: "210 100% 95%", mutedForeground: "220 18% 40%", card: "0 0% 100%", cardForeground: "222 47% 11%", border: "214 32% 90%", destructive: "0 65% 51%" },
+      spring: { name: "Spring Green", primary: "142 76% 30%", secondary: "173 58% 34%", accent: "48 100% 50%", background: "120 60% 98%", foreground: "222 47% 11%", muted: "128 60% 95%", mutedForeground: "140 18% 40%", card: "0 0% 100%", cardForeground: "222 47% 11%", border: "135 45% 86%", destructive: "0 65% 51%" },
+      monsoon: { name: "Monsoon Blue", primary: "204 85% 38%", secondary: "222 55% 34%", accent: "36 100% 52%", background: "205 100% 98%", foreground: "222 47% 11%", muted: "210 100% 95%", mutedForeground: "215 18% 40%", card: "0 0% 100%", cardForeground: "222 47% 11%", border: "209 40% 88%", destructive: "0 65% 51%" },
+    },
   };
+}
+
+function ThemeTab({ content, onChange }: { content: SiteContent; onChange: (c: SiteContent) => void }) {
+  return (
+    <div className="space-y-4">
+      <div className="text-sm text-gray-600">Choose a festival theme for the whole website.</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        {THEME_KEYS.map((key) => {
+          const preset = content.themePresets[key];
+          const active = content.theme === key;
+          return (
+            <button
+              key={key}
+              type="button"
+              onClick={() => onChange({ ...content, theme: key })}
+              className={`rounded-xl border p-4 text-left transition-all ${active ? "border-blue-600 ring-2 ring-blue-200" : "border-gray-200 hover:border-blue-300"}`}
+            >
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <div className="font-bold text-lg">{preset.name}</div>
+                  <div className="text-xs text-gray-500 uppercase">{key}</div>
+                </div>
+                {active && <CheckCircle2 className="w-5 h-5 text-green-600" />}
+              </div>
+              <div className="flex gap-2 mt-3">
+                <span className="w-6 h-6 rounded-full border" style={{ backgroundColor: `hsl(${preset.primary})` }} />
+                <span className="w-6 h-6 rounded-full border" style={{ backgroundColor: `hsl(${preset.secondary})` }} />
+                <span className="w-6 h-6 rounded-full border" style={{ backgroundColor: `hsl(${preset.accent})` }} />
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 function set<T extends object>(obj: T, path: string, value: unknown): T {
@@ -500,6 +585,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
 
 // ─────────────────────── Main Admin ───────────────────────
 const TABS = [
+  { id: "theme", label: "🎨 Themes" },
   { id: "home", label: "🏠 Home" },
   { id: "products", label: "🏍️ Products" },
   { id: "promotions", label: "🏷️ Offers & News" },
@@ -512,8 +598,8 @@ type SaveState = "idle" | "loading" | "saving" | "deploying" | "success" | "erro
 
 export default function Admin() {
   const [loggedIn, setLoggedIn] = useState(() => sessionStorage.getItem("bt_admin") === "1");
-  const [activeTab, setActiveTab] = useState<TabId>("home");
-  const [content, setContent] = useState<Content>(getDefaultContent());
+  const [activeTab, setActiveTab] = useState<TabId>("theme");
+  const [content, setContent] = useState<SiteContent>(getDefaultContent() as SiteContent);
   const [sha, setSha] = useState("");
   const [saveState, setSaveState] = useState<SaveState>("loading");
   const [errorMsg, setErrorMsg] = useState("");
@@ -523,7 +609,7 @@ export default function Admin() {
     setErrorMsg("");
     try {
       const { content: c, sha: s } = await ghFetchContent();
-      setContent(c as Content);
+      setContent(c as SiteContent);
       setSha(s);
       setSaveState("idle");
     } catch (err) {
@@ -560,7 +646,8 @@ export default function Admin() {
         if (status === "success") { setSaveState("success"); return; }
         if (status === "failure") { setSaveState("error"); setErrorMsg("Deploy failed — check GitHub Actions for details."); return; }
       }
-      setSaveState("success");
+      setSaveState("error");
+      setErrorMsg("Timed out waiting for GitHub Pages deploy. Check GitHub Actions.");
     } catch (err) {
       setErrorMsg(`Save failed: ${(err as Error).message}`);
       setSaveState("error");
@@ -636,11 +723,12 @@ export default function Admin() {
 
             {/* Tab content */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
-              {activeTab === "home" && <HomeTab content={content} onChange={setContent} />}
-              {activeTab === "products" && <ProductsTab content={content} onChange={setContent} />}
-              {activeTab === "promotions" && <PromotionsTab content={content} onChange={setContent} />}
-              {activeTab === "about" && <AboutTab content={content} onChange={setContent} />}
-              {activeTab === "contact" && <ContactTab content={content} onChange={setContent} />}
+              {activeTab === "theme" && <ThemeTab content={content} onChange={setContent as (c: SiteContent) => void} />}
+              {activeTab === "home" && <HomeTab content={content as Content} onChange={setContent as (c: Content) => void} />}
+              {activeTab === "products" && <ProductsTab content={content as Content} onChange={setContent as (c: Content) => void} />}
+              {activeTab === "promotions" && <PromotionsTab content={content as Content} onChange={setContent as (c: Content) => void} />}
+              {activeTab === "about" && <AboutTab content={content as Content} onChange={setContent as (c: Content) => void} />}
+              {activeTab === "contact" && <ContactTab content={content as Content} onChange={setContent as (c: Content) => void} />}
             </div>
 
             {/* Save bar */}
