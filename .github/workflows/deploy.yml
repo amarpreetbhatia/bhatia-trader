@@ -1,0 +1,76 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Bhatia Traders
+        run: pnpm --filter @workspace/bhatia-traders run build
+        env:
+          NODE_ENV: production
+          PORT: "3000"
+          # BASE_PATH controls the URL prefix of the site.
+          # - If you are using a CUSTOM DOMAIN or a GitHub user/org page
+          #   (e.g. username.github.io), set it to "/"
+          # - If you are using a GITHUB PROJECT PAGE
+          #   (e.g. username.github.io/bhatia-traders), set it to "/bhatia-traders/"
+          #
+          # How to set it: GitHub repo → Settings → Variables → Actions → New repository variable
+          #   Name: BASE_PATH   Value: /   (or /bhatia-traders/)
+          #
+          # Defaults to "/" if the variable is not set.
+          BASE_PATH: ${{ vars.BASE_PATH || '/' }}
+
+      - name: SPA routing — copy index.html to 404.html
+        # GitHub Pages serves 404.html for unknown routes.
+        # Copying index.html lets the React router handle all deep links.
+        run: cp artifacts/bhatia-traders/dist/public/index.html artifacts/bhatia-traders/dist/public/404.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: artifacts/bhatia-traders/dist/public
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

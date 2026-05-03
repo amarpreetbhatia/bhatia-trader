@@ -8,7 +8,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 
 - **Monorepo tool**: pnpm workspaces
 - **Node.js version**: 24
-- **Package manager**: pnpm
+- **Package manager**: pnpm v10
 - **TypeScript version**: 5.9
 - **API framework**: Express 5
 - **Database**: PostgreSQL + Drizzle ORM
@@ -44,3 +44,27 @@ See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and pa
   - Google Fonts: Baloo 2 (headings, Devanagari support) + Poppins (body)
 - **Content CMS**: Edit `src/content/promotions.md` or `src/content/news.md` to update promotions and news without code changes
 - **Dependencies**: react-markdown, remark-gfm, react-helmet-async, framer-motion, react-icons
+- **CI Build command**: `PORT=3000 BASE_PATH=/ NODE_ENV=production pnpm --filter @workspace/bhatia-traders run build`
+
+## GitHub Actions (CI/CD)
+
+Two workflows in `.github/workflows/`:
+
+### `deploy.yml` — Auto-deploy to GitHub Pages
+- Triggers on every push to `main`
+- Builds `artifacts/bhatia-traders` with Vite
+- Copies `index.html` → `404.html` for SPA routing
+- Deploys to GitHub Pages
+- **BASE_PATH**: Set as a GitHub repo variable (Settings → Variables → Actions). Defaults to `/`.
+  - Use `/` for a custom domain or user/org pages (e.g. `username.github.io`)
+  - Use `/repo-name/` for project pages (e.g. `username.github.io/bhatia-traders`)
+
+### `ci.yml` — Typecheck & Build Check
+- Runs on every push and pull request to `main`
+- Validates TypeScript and confirms the production build succeeds
+
+### GitHub Pages Setup Steps
+1. Push code to GitHub
+2. Go to repo Settings → Pages → Source: **GitHub Actions**
+3. (Optional) Set `BASE_PATH` variable in Settings → Variables → Actions
+4. Push any commit to `main` to trigger the first deploy
