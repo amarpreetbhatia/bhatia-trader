@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bhatiatraders.replit.app/sitemap.xml

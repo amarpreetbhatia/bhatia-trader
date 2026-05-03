@@ -1,0 +1,32 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "RlZI3i6YgHVyTCSElZ7QM"
+uri = "file://artifacts/bhatia-traders/src/assets/hero.jpg"
+type = "image"
+title = "Indian motorcycle dealership showroom, wide hero banner"
+
+[[outputs]]
+id = "1SxzAaliSNzCaxcc2p9Y5"
+uri = "file://artifacts/bhatia-traders/src/assets/motorcycle.jpg"
+type = "image"
+title = "Sporty motorcycle on road"
+
+[[outputs]]
+id = "PdcyJP3YH58mYyVH-ikte"
+uri = "file://artifacts/bhatia-traders/src/assets/tyre.jpg"
+type = "image"
+title = "Car tyre product photography clean"
+
+[[outputs]]
+id = "iMwvO1qmMkErCcN_4DzM1"
+uri = "file://artifacts/bhatia-traders/src/assets/battery.jpg"
+type = "image"
+title = "Automotive car battery product photography"
+
+[[outputs]]
+id = "SoLSehoWkmv6AH0BJo1Ma"
+uri = "file://artifacts/bhatia-traders/src/assets/about.jpg"
+type = "image"
+title = "Auto dealership exterior India"
