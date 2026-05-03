@@ -1,7 +1,7 @@
 {
   "home": {
     "heroBadge": "नरसिंहपुर का अपना डीलर",
-    "taglineHindi1": "भाटिया है तू",
+    "taglineHindi1": "भाटिया से है",
     "taglineHindi2": "बेस्टुम बेस्ट है",
     "taglineEnglish": "India's Trusted Auto Partner",
     "heroDescHindi": "नरसिंहपुर में TVS मोटरसाइकिल, JK Tyre और Exide बैटरी का एकमात्र विश्वसनीय शोरूम।",
@@ -25,10 +25,22 @@
       }
     ],
     "whyChooseUs": [
-      { "hindi": "किसानों और सरकारी कर्मचारियों की पहली पसंद", "english": "Trusted by farmers & govt employees" },
-      { "hindi": "आसान फाइनेंस सुविधा उपलब्ध", "english": "Easy finance options available" },
-      { "hindi": "बेहतरीन आफ्टर-सेल्स सर्विस", "english": "Excellent after-sales service" },
-      { "hindi": "असली पार्ट्स की गारंटी", "english": "100% genuine parts guarantee" }
+      {
+        "hindi": "किसानों और सरकारी कर्मचारियों की पहली पसंद",
+        "english": "Trusted by farmers & govt employees"
+      },
+      {
+        "hindi": "आसान फाइनेंस सुविधा उपलब्ध",
+        "english": "Easy finance options available"
+      },
+      {
+        "hindi": "बेहतरीन आफ्टर-सेल्स सर्विस",
+        "english": "Excellent after-sales service"
+      },
+      {
+        "hindi": "असली पार्ट्स की गारंटी",
+        "english": "100% genuine parts guarantee"
+      }
     ],
     "yearsExperience": "20+",
     "ctaTitleHindi": "आज ही हमारे शोरूम आएं",
@@ -40,10 +52,22 @@
       "titleEnglish": "TVS Motorcycles & Scooters",
       "image": "motorcycle.jpg",
       "features": [
-        { "hindi": "अपाचे सीरीज - रेसिंग के दीवानों के लिए", "english": "Apache Series - For the racing enthusiast" },
-        { "hindi": "जुपिटर और आईक्यूब - स्मार्ट रोज़मर्रा की सवारी", "english": "Jupiter & iQube - Smart everyday commute" },
-        { "hindi": "रेडियॉन और एनटॉर्क - बेहतरीन माइलेज", "english": "Radeon & NTORQ - Performance and style" },
-        { "hindi": "XL100 - भारी काम का साथी", "english": "XL100 - Heavy duty work partner" }
+        {
+          "hindi": "अपाचे सीरीज - रेसिंग के दीवानों के लिए",
+          "english": "Apache Series - For the racing enthusiast"
+        },
+        {
+          "hindi": "जुपिटर और आईक्यूब - स्मार्ट रोज़मर्रा की सवारी",
+          "english": "Jupiter & iQube - Smart everyday commute"
+        },
+        {
+          "hindi": "रेडियॉन और एनटॉर्क - बेहतरीन माइलेज",
+          "english": "Radeon & NTORQ - Performance and style"
+        },
+        {
+          "hindi": "XL100 - भारी काम का साथी",
+          "english": "XL100 - Heavy duty work partner"
+        }
       ]
     },
     "jktyre": {
@@ -51,10 +75,22 @@
       "titleEnglish": "JK Tyre Exclusive Dealership",
       "image": "tyre.jpg",
       "features": [
-        { "hindi": "कार और एसयूवी के रेडियल टायर", "english": "Car & SUV radial tyres" },
-        { "hindi": "कमर्शियल वाहनों के टायर", "english": "Commercial vehicle tyres" },
-        { "hindi": "ट्रैक्टर और कृषि उपकरणों के टायर", "english": "Tractor & farm equipment tyres" },
-        { "hindi": "व्हील अलाइनमेंट और बैलेंसिंग", "english": "Wheel alignment & balancing services" }
+        {
+          "hindi": "कार और एसयूवी के रेडियल टायर",
+          "english": "Car & SUV radial tyres"
+        },
+        {
+          "hindi": "कमर्शियल वाहनों के टायर",
+          "english": "Commercial vehicle tyres"
+        },
+        {
+          "hindi": "ट्रैक्टर और कृषि उपकरणों के टायर",
+          "english": "Tractor & farm equipment tyres"
+        },
+        {
+          "hindi": "व्हील अलाइनमेंट और बैलेंसिंग",
+          "english": "Wheel alignment & balancing services"
+        }
       ]
     },
     "exide": {
@@ -62,10 +98,22 @@
       "titleEnglish": "Exide Battery Solutions",
       "image": "battery.jpg",
       "features": [
-        { "hindi": "टू-व्हीलर और फोर-व्हीलर की बैटरी", "english": "Two-wheeler & Four-wheeler batteries" },
-        { "hindi": "ट्रैक्टर और भारी वाहनों की बैटरी", "english": "Tractor & heavy vehicle batteries" },
-        { "hindi": "घर और दुकान के लिए इन्वर्टर बैटरी", "english": "Inverter batteries for home & shop" },
-        { "hindi": "फ्री बैटरी चेकअप और एक्सचेंज ऑफर", "english": "Free battery checkup & exchange offers" }
+        {
+          "hindi": "टू-व्हीलर और फोर-व्हीलर की बैटरी",
+          "english": "Two-wheeler & Four-wheeler batteries"
+        },
+        {
+          "hindi": "ट्रैक्टर और भारी वाहनों की बैटरी",
+          "english": "Tractor & heavy vehicle batteries"
+        },
+        {
+          "hindi": "घर और दुकान के लिए इन्वर्टर बैटरी",
+          "english": "Inverter batteries for home & shop"
+        },
+        {
+          "hindi": "फ्री बैटरी चेकअप और एक्सचेंज ऑफर",
+          "english": "Free battery checkup & exchange offers"
+        }
       ]
     }
   },
