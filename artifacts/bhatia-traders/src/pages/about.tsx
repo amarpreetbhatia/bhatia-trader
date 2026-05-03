@@ -2,9 +2,12 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { CheckCircle2, Users, MapPin, Award } from "lucide-react";
-import aboutImg from "@/assets/about.jpg";
+import content from "@/content/site-content.json";
+
+const BASE = import.meta.env.BASE_URL;
 
 export default function About() {
+  const a = content.about;
   return (
     <div className="w-full">
       <Helmet>
@@ -16,13 +19,8 @@ export default function About() {
       <section className="bg-primary text-primary-foreground py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <h1 className="text-4xl md:text-6xl font-bold font-heading mb-4">
-              हमारे बारे में
-            </h1>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <h1 className="text-4xl md:text-6xl font-bold font-heading mb-4">हमारे बारे में</h1>
             <p className="text-xl text-primary-foreground/80 uppercase tracking-widest font-semibold">About Bhatia Traders</p>
           </motion.div>
         </div>
@@ -32,50 +30,43 @@ export default function About() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
               <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-6">
                 नरसिंहपुर का भरोसा<br />
                 <span className="text-primary text-2xl md:text-3xl">Narsinghpur's Trust</span>
               </h2>
-              
+
               <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  <strong className="text-foreground">भाटिया ट्रेडर्स (Bhatia Traders)</strong> पिछले कई वर्षों से नरसिंहपुर और आसपास के क्षेत्रों में ऑटोमोबाइल सेक्टर का एक प्रतिष्ठित नाम है। हमारी पहचान हमारी गुणवत्ता, ईमानदारी और ग्राहकों के प्रति समर्पण है।
+                  <strong className="text-foreground">भाटिया ट्रेडर्स (Bhatia Traders)</strong> {a.para1Hindi}
                 </p>
-                <p>
-                  We take pride in being the exclusive authorized dealer for <strong>TVS Motor</strong>, <strong>JK Tyre</strong>, and <strong>Exide Battery</strong>. Whether it's a farmer looking for a sturdy XL100, a young professional wanting an Apache, or a family needing reliable tyres and batteries, we serve everyone with the same warmth and respect.
-                </p>
-                <p>
-                  हमारा मानना है कि ग्राहक हमारा परिवार है। <em>"भाटिया है तू बेस्टुम बेस्ट है"</em> सिर्फ हमारा स्लोगन नहीं, बल्कि हमारे ग्राहकों का हम पर अटूट विश्वास है।
-                </p>
+                <p>{a.para1English}</p>
+                <p>{a.para2Hindi}</p>
               </div>
 
               <div className="mt-10 grid grid-cols-2 gap-6">
                 <div className="bg-muted p-4 rounded-lg border border-border">
-                  <h4 className="font-bold text-2xl text-primary mb-1">100%</h4>
-                  <p className="text-sm font-medium">Genuine Products<br/><span className="text-muted-foreground text-xs">असली उत्पाद</span></p>
+                  <h4 className="font-bold text-2xl text-primary mb-1">{a.stat1Value}</h4>
+                  <p className="text-sm font-medium">
+                    {a.stat1LabelEnglish}<br />
+                    <span className="text-muted-foreground text-xs">{a.stat1LabelHindi}</span>
+                  </p>
                 </div>
                 <div className="bg-muted p-4 rounded-lg border border-border">
-                  <h4 className="font-bold text-2xl text-primary mb-1">20k+</h4>
-                  <p className="text-sm font-medium">Happy Customers<br/><span className="text-muted-foreground text-xs">संतुष्ट ग्राहक</span></p>
+                  <h4 className="font-bold text-2xl text-primary mb-1">{a.stat2Value}</h4>
+                  <p className="text-sm font-medium">
+                    {a.stat2LabelEnglish}<br />
+                    <span className="text-muted-foreground text-xs">{a.stat2LabelHindi}</span>
+                  </p>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-              className="relative"
-            >
+            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl relative aspect-[4/5] bg-muted border-8 border-white">
-                <img 
-                  src={aboutImg} 
-                  alt="Bhatia Traders Dealership" 
+                <img
+                  src={`${BASE}images/${a.mainImage}`}
+                  alt="Bhatia Traders Dealership"
                   className="w-full h-full object-cover"
                 />
               </div>

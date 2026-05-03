@@ -41,21 +41,10 @@ jobs:
         env:
           NODE_ENV: production
           PORT: "3000"
-          # BASE_PATH controls the URL prefix of the site.
-          # - If you are using a CUSTOM DOMAIN or a GitHub user/org page
-          #   (e.g. username.github.io), set it to "/"
-          # - If you are using a GITHUB PROJECT PAGE
-          #   (e.g. username.github.io/bhatia-traders), set it to "/bhatia-traders/"
-          #
-          # How to set it: GitHub repo → Settings → Variables → Actions → New repository variable
-          #   Name: BASE_PATH   Value: /   (or /bhatia-traders/)
-          #
-          # Defaults to "/" if the variable is not set.
           BASE_PATH: ${{ vars.BASE_PATH || '/' }}
+          VITE_CMS_TOKEN: ${{ vars.VITE_CMS_TOKEN }}
 
       - name: SPA routing — copy index.html to 404.html
-        # GitHub Pages serves 404.html for unknown routes.
-        # Copying index.html lets the React router handle all deep links.
         run: cp artifacts/bhatia-traders/dist/public/index.html artifacts/bhatia-traders/dist/public/404.html
 
       - name: Upload Pages artifact

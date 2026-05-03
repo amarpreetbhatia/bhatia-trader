@@ -1,0 +1,96 @@
+{
+  "home": {
+    "heroBadge": "नरसिंहपुर का अपना डीलर",
+    "taglineHindi1": "भाटिया है तू",
+    "taglineHindi2": "बेस्टुम बेस्ट है",
+    "taglineEnglish": "India's Trusted Auto Partner",
+    "heroDescHindi": "नरसिंहपुर में TVS मोटरसाइकिल, JK Tyre और Exide बैटरी का एकमात्र विश्वसनीय शोरूम।",
+    "heroDescEnglish": "Your trusted showroom for TVS, JK Tyre, and Exide in Narsinghpur.",
+    "heroImage": "hero.jpg",
+    "brands": [
+      {
+        "title": "TVS Motor",
+        "descHindi": "सभी लेटेस्ट TVS मोटरसाइकिल और स्कूटर।",
+        "descEnglish": "All latest TVS motorcycles & scooters."
+      },
+      {
+        "title": "JK Tyre",
+        "descHindi": "कार, ट्रैक्टर और कमर्शियल वाहनों के लिए।",
+        "descEnglish": "Tyres for cars, tractors & commercial vehicles."
+      },
+      {
+        "title": "Exide Battery",
+        "descHindi": "लंबे समय तक चलने वाली बैटरी हर वाहन के लिए।",
+        "descEnglish": "Long-lasting batteries for every vehicle."
+      }
+    ],
+    "whyChooseUs": [
+      { "hindi": "किसानों और सरकारी कर्मचारियों की पहली पसंद", "english": "Trusted by farmers & govt employees" },
+      { "hindi": "आसान फाइनेंस सुविधा उपलब्ध", "english": "Easy finance options available" },
+      { "hindi": "बेहतरीन आफ्टर-सेल्स सर्विस", "english": "Excellent after-sales service" },
+      { "hindi": "असली पार्ट्स की गारंटी", "english": "100% genuine parts guarantee" }
+    ],
+    "yearsExperience": "20+",
+    "ctaTitleHindi": "आज ही हमारे शोरूम आएं",
+    "ctaDescEnglish": "Visit our showroom today for the best deals on TVS, JK Tyre & Exide."
+  },
+  "products": {
+    "tvs": {
+      "titleHindi": "TVS मोटरसाइकिल और स्कूटर",
+      "titleEnglish": "TVS Motorcycles & Scooters",
+      "image": "motorcycle.jpg",
+      "features": [
+        { "hindi": "अपाचे सीरीज - रेसिंग के दीवानों के लिए", "english": "Apache Series - For the racing enthusiast" },
+        { "hindi": "जुपिटर और आईक्यूब - स्मार्ट रोज़मर्रा की सवारी", "english": "Jupiter & iQube - Smart everyday commute" },
+        { "hindi": "रेडियॉन और एनटॉर्क - बेहतरीन माइलेज", "english": "Radeon & NTORQ - Performance and style" },
+        { "hindi": "XL100 - भारी काम का साथी", "english": "XL100 - Heavy duty work partner" }
+      ]
+    },
+    "jktyre": {
+      "titleHindi": "JK Tyre (जेके टायर)",
+      "titleEnglish": "JK Tyre Exclusive Dealership",
+      "image": "tyre.jpg",
+      "features": [
+        { "hindi": "कार और एसयूवी के रेडियल टायर", "english": "Car & SUV radial tyres" },
+        { "hindi": "कमर्शियल वाहनों के टायर", "english": "Commercial vehicle tyres" },
+        { "hindi": "ट्रैक्टर और कृषि उपकरणों के टायर", "english": "Tractor & farm equipment tyres" },
+        { "hindi": "व्हील अलाइनमेंट और बैलेंसिंग", "english": "Wheel alignment & balancing services" }
+      ]
+    },
+    "exide": {
+      "titleHindi": "Exide बैटरी",
+      "titleEnglish": "Exide Battery Solutions",
+      "image": "battery.jpg",
+      "features": [
+        { "hindi": "टू-व्हीलर और फोर-व्हीलर की बैटरी", "english": "Two-wheeler & Four-wheeler batteries" },
+        { "hindi": "ट्रैक्टर और भारी वाहनों की बैटरी", "english": "Tractor & heavy vehicle batteries" },
+        { "hindi": "घर और दुकान के लिए इन्वर्टर बैटरी", "english": "Inverter batteries for home & shop" },
+        { "hindi": "फ्री बैटरी चेकअप और एक्सचेंज ऑफर", "english": "Free battery checkup & exchange offers" }
+      ]
+    }
+  },
+  "promotions": {
+    "offers": "# Current Promotions / वर्तमान ऑफर\n\n## TVS Apache RTR 160 4V — Special Finance Offer\n**आसान किस्तों पर घर ले जाएं** | Easy EMI Starting ₹2,999/month  \nZero down payment available for govt. employees. Contact us today!\n\n---\n\n## JK Tyre — Monsoon Safety Deal\nBuy 2 tyres, get FREE wheel balancing & alignment.  \n**बारिश के मौसम में सुरक्षित रहें** — जल्दी करें, ऑफर सीमित समय के लिए है।\n\n---\n\n## Exide Battery — Exchange Offer\nOld battery exchange: Flat ₹500 off on any Exide battery.  \n**पुरानी बैटरी दें, नई बैटरी लें — ₹500 की छूट पाएं।**\n\n---\n\n## Festive Season Offer — दिवाली धमाका\nFree accessories worth ₹3,000 on every TVS motorcycle purchase.  \nOffer valid for govt. employees and farmers with valid ID proof.",
+    "news": "# Latest News / ताज़ा खबर\n\n## TVS iQube Electric Scooter Now Available\nBhatia Traders is now an authorized TVS Electric dealer.  \n**इलेक्ट्रिक स्कूटर अब नरसिंहपुर में उपलब्ध है।**  \nTest ride available — call +91 9425168575 to book.\n\n---\n\n## New Service Center Inaugurated\nOur fully equipped service center is now open 6 days a week.  \n**सोमवार से शनिवार — सुबह 9 बजे से शाम 7 बजे तक।**\n\n---\n\n## JK Tyre Dealership Renewed for 2025\nBhatia Traders proudly continues as the exclusive JK Tyre dealer in Narsinghpur district.\n\n---\n\n## Exide Battery Authorized Dealer Recognition\nAwarded \"Best Performing Dealer\" in Madhya Pradesh region for FY 2024-25.  \n**मध्यप्रदेश में बेस्ट परफॉर्मिंग डीलर अवार्ड।**"
+  },
+  "about": {
+    "mainImage": "about.jpg",
+    "para1Hindi": "भाटिया ट्रेडर्स (Bhatia Traders) पिछले कई वर्षों से नरसिंहपुर और आसपास के क्षेत्रों में ऑटोमोबाइल सेक्टर का एक प्रतिष्ठित नाम है। हमारी पहचान हमारी गुणवत्ता, ईमानदारी और ग्राहकों के प्रति समर्पण है।",
+    "para1English": "We take pride in being the exclusive authorized dealer for TVS Motor, JK Tyre, and Exide Battery. Whether it's a farmer looking for a sturdy XL100, a young professional wanting an Apache, or a family needing reliable tyres and batteries, we serve everyone with the same warmth and respect.",
+    "para2Hindi": "हमारा मानना है कि ग्राहक हमारा परिवार है। \"भाटिया है तू बेस्टुम बेस्ट है\" सिर्फ हमारा स्लोगन नहीं, बल्कि हमारे ग्राहकों का हम पर अटूट विश्वास है।",
+    "stat1Value": "100%",
+    "stat1LabelEnglish": "Genuine Products",
+    "stat1LabelHindi": "असली उत्पाद",
+    "stat2Value": "20k+",
+    "stat2LabelEnglish": "Happy Customers",
+    "stat2LabelHindi": "संतुष्ट ग्राहक"
+  },
+  "contact": {
+    "phone": "+91 9425168575",
+    "email": "bhatiatrader@gmail.com",
+    "address": "Station Road, Narsinghpur\nMadhya Pradesh 487001\nIndia",
+    "hoursWeekday": "सोमवार से शनिवार (Mon - Sat): 9:00 AM - 7:30 PM",
+    "hoursSunday": "रविवार (Sunday): Closed",
+    "mapsEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117469.75239121683!2d79.11721526130985!3d22.955513220556272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397f8c0576b5c007%3A0x6b8dd42ec56b7c52!2sNarsinghpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1709669528434!5m2!1sen!2sin"
+  }
+}
